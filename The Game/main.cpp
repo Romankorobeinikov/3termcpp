@@ -18,7 +18,8 @@ void menu()
 	do {
 		system("cls");
 		cout<<"Игрок: "<<p_name;
-		printf(" (%d Lvl)\nДеньги: %d$\nОпыт: %d/%d XP\n\n%cПутешествие\n%cМагазин\n%cМой герой\n%cСохранить игру\n", p_lv, gold, p_xp, lvl[p_lv-1], kur[0], kur[1], kur[2], kur[3]);
+		printf(" (%d Lvl)\nДеньги: %d$\nОпыт: %d/%d XP\n\n%cПутешествие\n%cМагазин\n%cМой герой\n%cСохранить игру\n",
+            p_lv, gold, p_xp, lvl[p_lv-1], kur[0], kur[1], kur[2], kur[3]);
 		code = select_pun(4);
 	} while (code==0);
 	switch (code) {
@@ -35,8 +36,7 @@ void menu()
         cout<<"3";
 	break;
 	case (4):
-        //save_s(true);
-        cout<<"4";
+        save_s();
 	break;
 	default:
 	    menu();
@@ -69,8 +69,7 @@ void loading_game_menu()
 	if (code==1)
 		enter_p_name();
 	else
-		//load_s();
-		printf("Загрузить");
+		load_s();
 }
 
 int main()

@@ -12,5 +12,6 @@ int arm_b [16] = {0, 3, 15, 28, 40, 70, 0, 0, 0, 0, 0, 1, 5, 10, 20, 35};
 int att_b [16] = {0, 0, 0, 0, 0, 0, 12, 25, 32, 43, 60, 0, 0, 5, 30, 45};
 int hp_b [16] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 10, 20, 25, 40};
 int price [16] = {0, 12, 60, 112, 160, 280, 48, 100, 128, 172, 240, 15, 75, 175, 375, 600};
+bool proid = false, info = false, arena_lock = true, a_stake_b = false, autosave = false;
 
 Players_item armor, weapon, amulet;

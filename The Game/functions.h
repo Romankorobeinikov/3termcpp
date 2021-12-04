@@ -38,3 +38,10 @@ int select_pun(int maxi)
 		return 0;
 	}
 }
+
+void enter_p_name()
+{
+	system("cls");
+	printf("¬ведите ваш ник: ");
+	cin>>::p_name;
+}

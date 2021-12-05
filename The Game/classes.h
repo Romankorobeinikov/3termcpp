@@ -30,3 +30,32 @@ public:
 		return name;
 	}
 };
+
+class Creature
+{
+private:
+	int arm, att;
+	string name;
+public:
+	int hp;
+	void set_param(int aarm, int aatt, int ahp, string nm)
+	{
+		arm = aarm;
+		att = aatt;
+		hp = ahp;
+		name = nm;
+	}
+	int get_att()
+	{
+		return att;
+	}
+	int get_arm()
+	{
+		return arm;
+	}
+	string get_name()
+	{
+		return name;
+	}
+};
+

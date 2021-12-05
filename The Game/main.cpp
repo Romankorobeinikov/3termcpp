@@ -11,6 +11,7 @@
 #include "d:\C++\3termcpp\The Game\functions.h"
 #include "d:\C++\3termcpp\The Game\shop.h"
 #include "d:\C++\3termcpp\The Game\myplayer.h"
+#include "d:\C++\3termcpp\The Game\adventure.h"
 
 using namespace std;
 
@@ -20,14 +21,13 @@ void menu()
 	do {
 		system("cls");
 		cout<<"Игрок: "<<p_name;
-		printf(" (%d Lvl)\nДеньги: %d$\nОпыт: %d/%d XP\n\n%cПутешествие\n%cМагазин\n%cМой герой\n%cСохранить игру\n",
-            p_lv, gold, p_xp, lvl[p_lv-1], kur[0], kur[1], kur[2], kur[3]);
-		code = select_pun(4);
+		printf(" (%d Lvl)\nДеньги: %d$\nОпыт: %d/%d XP\n\n%cПутешествие\n%cМагазин\n%cМой герой\n%cСохранить игру\n%cНастройки\n",
+            p_lv, gold, p_xp, lvl[p_lv-1], kur[0], kur[1], kur[2], kur[3], kur[4]);
+		code = select_pun(5);
 	} while (code==0);
 	switch (code) {
 	case (1):
-		//adventure_start();
-		cout<<"1";
+		adventure_start();
     break;
 	case (2):
 	    shop();
@@ -37,6 +37,9 @@ void menu()
 	break;
 	case (4):
         save_s();
+	break;
+	case (5):
+        settings();
 	break;
 	default:
 	    menu();

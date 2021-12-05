@@ -2,6 +2,45 @@ using namespace std;
 
 void menu();
 
+void vvod()
+{
+    if (indicator==1){
+        cout<<ans;
+    } else if (indicator==-1){
+        cout<<"-";
+    }
+
+    if(_kbhit())
+    {
+        btn=getch();
+
+        if(47<btn && btn <59){
+        ans1 = ans*10 + (btn-48)*(abs(ans)/ans);
+        ans = ans1;
+        if (indicator==-1){
+                ans=-1*ans1;
+            }
+        indicator = 1;
+        }
+
+        if(btn==45){
+            ans1 = -1*ans;
+            ans = ans1;
+            if (indicator==0){
+                indicator=-1;
+            }
+        }
+
+        if(btn == 8){
+        ans1 = ans/10;
+        ans = ans1;
+        if (indicator==-1){
+                indicator=0;
+            }
+    }
+    }
+}
+
 int select_pun(int maxi)
 {
 	btn = getch();
@@ -88,4 +127,60 @@ void load_s()
 		delay(1000);
 		enter_p_name();
 	}
+}
+
+int random(int n, int m, int jk = 1)
+{
+	srand(time(NULL)*jk);
+	return rand()%n+m;
+}
+
+int attacking(int armor, int attack)
+{
+	int ar_coef1 = random(50, 1);
+	float ar_coef = ar_coef1;
+	ar_coef /= 100;
+	int ar_damage = armor*ar_coef;
+	if (attack-ar_damage<=0)
+		return 0;
+	else
+		return attack-ar_damage;
+}
+
+void new_lvl()
+{
+	if (p_xp>=lvl[p_lv-1]) {
+		printf("Новый уровень! +10$ и +5 ко всем параметрам!\n");
+		p_lv++;
+		gold += 10;
+		p_at += 5;
+		p_hp += 5;
+		p_ar += 5;
+		all_gold+= 10;
+		if (p_lv>=6 && arena_lock == true)
+			arena_lock = false;
+	}
+}
+
+void settings()
+{
+	pun = 1; kur[0] = '>'; code = 0;
+	do {
+		system("cls");
+		printf("Настройки\n\n%cСложность: \t", kur[0]);
+		if (difficulty)
+			printf("Сложно");
+		else
+			printf("Легко");
+		printf("\n%cВ меню", kur[1]);
+		code = select_pun(2);
+	} while (code == 0);
+	if (code == 1) {
+		if (difficulty)
+			difficulty = 0;
+		else
+			difficulty = 1;
+		settings();
+	} else
+		menu();
 }

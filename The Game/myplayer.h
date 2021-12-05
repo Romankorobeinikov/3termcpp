@@ -34,17 +34,69 @@ void inv_print(int num)
 }
 
 
+bool inv_sel_pun(int maxi, bool shop, int n)
+{
+	if (shop) {
+		if (pun<6)
+			shop_print(pun+n);
+	} else
+		inv_print(pun);
+	btn = getch();
+	switch (btn) {
+	case (72):
+		if (pun==1) {
+			kur[0] = ' ';
+			pun = maxi;
+			kur[maxi-1] = '>';
+			return true;
+		} else {
+			kur[pun-1] = ' ';
+			kur[pun-2] = '>';
+			pun--;
+			return true;
+		}
+	break;
+	case (80):
+		if (pun==maxi) {
+			kur[maxi-1] = ' ';
+			pun = 1;
+			kur[0] = '>';
+			return true;
+		} else {
+			kur[pun-1] = ' ';
+			kur[pun] = '>';
+			pun++;
+			return true;
+		}
+	break;
+	case (13):
+		if (shop) {
+			kur[pun-1] = ' ';
+			return false;
+		} else {
+			if (pun == 4) {
+				kur[pun-1] = ' ';
+				return false;
+			} else
+				return true;
+		}
+	break;
+	default:
+		return true;
+	}
+}
+
 void inventory()
 {
-	pun = 1; kur[0] = '>'; int b_sel = 0;
+	pun = 1; kur[0] = '>'; bool b_sel = true;
     do {
 		system("cls");
 		printf("Снаряжение\n\n%cОружие\n%cБроня\n%cАмулет\n%cНазад\n\n", kur[0], kur[1], kur[2], kur[3]);
-		b_sel = select_pun(4);
-        inv_print(pun);
-    } while (b_sel!=4);
+		b_sel = inv_sel_pun(4, false, 0);
+    } while (b_sel);
     my_player();
 }
+
 
 void my_player()
 {

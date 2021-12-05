@@ -9,6 +9,7 @@
 #include "d:\C++\3termcpp\The Game\classes.h"
 #include "d:\C++\3termcpp\The Game\var.h"
 #include "d:\C++\3termcpp\The Game\functions.h"
+#include "d:\C++\3termcpp\The Game\myplayer.h"
 
 using namespace std;
 
@@ -32,8 +33,7 @@ void menu()
 	    cout<<"2";
 	break;
 	case (3):
-        //my_player();
-        cout<<"3";
+        my_player();
 	break;
 	case (4):
         save_s();
@@ -42,7 +42,6 @@ void menu()
 	    menu();
     break;
 	}
-    menu();
 }
 
 void preparing()

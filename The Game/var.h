@@ -1,6 +1,6 @@
 using namespace std;
 
-int gold = 10, p_at = 7, p_hp = 10, p_ar = 5, p_lv = 1, p_xp = 0, lvl_loc, tren = 1, victory, enemy, enemy_cof, loc_score, all_gold, bodies, ydar, promah, win, lose,
+int gold = 10000, p_at = 7, p_hp = 10, p_ar = 5, p_lv = 1, p_xp = 0, lvl_loc, tren = 1, victory, enemy, enemy_cof, loc_score, all_gold, bodies, ydar, promah, win, lose,
     death, lvl [50], tren_pr [100], att_id = 0, arm_id = 0, item_id = 0, pun, code, apl_at[5], apl_hp[5], apl_ar[5], aen_n[5], a_stake, pl_table[5], pl_plc_table[5],
     pl_scores[5], arena_all_pl, apl_kill[5], a_rew_xp, price_itm, itm_id;
 char btn, kur[] = "                    ";

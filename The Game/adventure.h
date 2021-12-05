@@ -26,7 +26,7 @@ int competition (int difficulty)
                 return 1;
             } else{
                 system("cls");
-                if (indicator){
+                if (btn>0){
                     printf("Неверно!\n");
                 }else{
                     printf("Не успел!\n");
@@ -48,7 +48,7 @@ int competition (int difficulty)
                 return 1;
             } else{
                 system("cls");
-                if (indicator){
+                if (btn>0){
                     printf("Неверно!\n");
                 }else{
                     printf("Не успел!\n");
@@ -70,7 +70,7 @@ int competition (int difficulty)
                 return 1;
             } else{
                 system("cls");
-                if (indicator){
+                if (btn>0){
                     printf("Неверно!\n");
                 }else{
                     printf("Не успел!\n");
@@ -92,7 +92,7 @@ int competition (int difficulty)
                 return 1;
             } else{
                 system("cls");
-                if (indicator){
+                if (btn>0){
                     printf("Неверно!\n");
                 }else{
                     printf("Не успел!\n");
@@ -114,7 +114,7 @@ int competition (int difficulty)
                 return 1;
             } else{
                 system("cls");
-                if (indicator){
+                if (btn>0){
                     printf("Неверно!\n");
                 }else{
                     printf("Не успел!\n");
@@ -136,7 +136,7 @@ int competition (int difficulty)
                 return 1;
             } else{
                 system("cls");
-                if (indicator){
+                if (btn>0){
                     printf("Неверно!\n");
                 }else{
                     printf("Не успел!\n");

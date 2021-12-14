@@ -149,7 +149,7 @@ int attacking(int armor, int attack)
 
 void new_lvl()
 {
-	if (p_xp>=lvl[p_lv-1]) {
+	if (p_xp >= lvl[p_lv-1]) {
 		printf("Новый уровень! +10$ и +5 ко всем параметрам!\n");
 		p_lv++;
 		gold += 10;
